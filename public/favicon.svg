@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="US Car Restoration">
+  <rect width="64" height="64" rx="8" fill="#0c1524"/>
+  <path d="M10 40h44M14 40l4-11a5 5 0 0 1 4.6-3.2h18.8A5 5 0 0 1 46 29l4 11" fill="none" stroke="#dbab42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="21" cy="43" r="5.2" fill="none" stroke="#dbab42" stroke-width="3.2"/>
+  <circle cx="43" cy="43" r="5.2" fill="none" stroke="#dbab42" stroke-width="3.2"/>
+  <path d="M24 29h16" stroke="#8c2f3c" stroke-width="2.6" stroke-linecap="round"/>
+</svg>

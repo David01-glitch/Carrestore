@@ -1,0 +1,15 @@
+{
+  "name": "US Car Restoration",
+  "short_name": "US Car Rest.",
+  "description": "An independent editorial resource on American classic car restoration, history and ownership.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fdfbf6",
+  "theme_color": "#0c1524",
+  "lang": "en",
+  "categories": ["education", "reference", "lifestyle"],
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

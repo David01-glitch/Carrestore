@@ -1,0 +1,31 @@
+# AWS Amplify Hosting build specification.
+#
+# Amplify serves the prerendered output in dist/ as static files. Every route is a real
+# HTML file, so no SPA rewrite rule is needed and crawlers receive content on first byte.
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        # SITE_URL drives canonicals, Open Graph tags, robots.txt and the sitemap.
+        # Set it explicitly in the Amplify console (App settings → Environment variables)
+        # to your real domain. Until then we fall back to the branch's own Amplify URL so
+        # the build never emits a hard-coded or fictional domain.
+        - export SITE_URL="${SITE_URL:-https://${AWS_BRANCH}.${AWS_APP_ID}.amplifyapp.com}"
+        - echo "Building for SITE_URL=$SITE_URL"
+        - npm ci
+    build:
+      commands:
+        - export SITE_URL="${SITE_URL:-https://${AWS_BRANCH}.${AWS_APP_ID}.amplifyapp.com}"
+        - npm run build
+        # Fail the deployment if the built output would mislead a crawler or a reader.
+        - npm run validate:images
+        - npm run validate:links
+        - npm run qa
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

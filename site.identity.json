@@ -1,0 +1,52 @@
+{
+  "$comment": [
+    "BUSINESS IDENTITY CONFIGURATION — read before editing.",
+    "",
+    "Every field below is rendered verbatim on the public website. Nothing here may be",
+    "guessed, approximated, or filled in with example data. `npm run build` runs",
+    "scripts/validate-config.mjs, which refuses to build when a value looks like a",
+    "placeholder or when a value is present but has not been marked verified.",
+    "",
+    "TO ADD A FIELD: put the real value in `value`, then set `verified` to true.",
+    "TO OMIT A FIELD: leave `value` as null. The website simply will not render it.",
+    "Omitting is always safe. Inventing is never safe."
+  ],
+  "displayName": "US Car Restoration",
+  "tagline": "An independent editorial resource on American classic car restoration",
+  "email": {
+    "value": "Uscarrestoration@gmail.com",
+    "verified": true,
+    "source": "Provided directly by the site owner."
+  },
+  "legalName": {
+    "value": null,
+    "verified": false,
+    "source": "Not independently verified. Enter the registered legal entity name if one exists."
+  },
+  "phone": {
+    "value": null,
+    "verified": false,
+    "source": "Not independently verified. Enter a real, monitored business line only."
+  },
+  "address": {
+    "value": null,
+    "verified": false,
+    "source": "Not independently verified. Enter a real business address only — never a residential or approximated one."
+  },
+  "businessHours": {
+    "value": null,
+    "verified": false,
+    "source": "Not independently verified. Enter real staffed hours only."
+  },
+  "responseTime": {
+    "value": null,
+    "verified": false,
+    "source": "Not independently verified. Only state a response window you can actually meet."
+  },
+  "social": {
+    "$comment": "Add only profiles that genuinely exist and are controlled by this business.",
+    "profiles": []
+  },
+  "organizationType": "Organization",
+  "$organizationTypeNote": "Kept as the generic schema.org Organization type. Do not upgrade to LocalBusiness or AutoRepair until a verified physical address and real service operation exist — those types assert a physical place of business to search engines."
+}

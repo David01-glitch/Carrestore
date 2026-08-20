@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-cream-50 font-body text-navy-900;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    /* Nothing on this site scrolls the page sideways. */
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  /* A single, consistent focus treatment across every interactive element. */
+  :focus-visible {
+    outline: 2px solid theme('colors.burgundy.600');
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* Images never overflow their column. */
+  img, picture, video, canvas, svg { max-width: 100%; height: auto; }
+
+  ::selection {
+    background-color: theme('colors.brass.300');
+    color: theme('colors.navy.900');
+  }
+}
+
+@layer components {
+  /* Vintage-manual rule used between editorial sections. */
+  .rule-hairline {
+    background-image: linear-gradient(to right, theme('colors.navy.300') 0 33%, transparent 33% 100%);
+    background-size: 6px 1px;
+    background-repeat: repeat-x;
+  }
+
+  .card-garage {
+    @apply relative overflow-hidden rounded-sm border border-navy-200 bg-white transition-all duration-300 ease-editorial;
+  }
+  .card-garage:hover {
+    @apply border-navy-300;
+    box-shadow: 0 14px 30px -18px rgba(7, 13, 23, 0.45);
+  }
+  .card-garage .zoomable {
+    @apply transition-transform duration-500 ease-editorial;
+  }
+  .card-garage:hover .zoomable {
+    transform: scale(1.035);
+  }
+}
+
+@layer utilities {
+  .text-shadow-hero {
+    text-shadow: 0 2px 18px rgba(7, 13, 23, 0.55), 0 1px 3px rgba(7, 13, 23, 0.4);
+  }
+}
