@@ -48,7 +48,7 @@ export default function Blog() {
             <div>
               <div className="flex flex-wrap gap-2">
                 <Plate>{lead.category}</Plate>
-                <Plate>{readingMinutes(lead.blocks)} min read</Plate>
+                <Plate>{readingMinutes(lead.blocks, lead.faq, lead.dek)} min read</Plate>
               </div>
               <h2 className="mt-4 font-display text-2xl leading-tight text-navy-900 md:text-[1.9rem]">
                 <Link to={`/blog/${lead.slug}`} className="hover:text-burgundy-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy-600">{lead.title}</Link>
@@ -72,7 +72,7 @@ export default function Blog() {
                 <div className="mt-4 flex flex-1 flex-col">
                   <div className="flex flex-wrap gap-2">
                     <Plate>{a.category}</Plate>
-                    <Plate>{readingMinutes(a.blocks)} min</Plate>
+                    <Plate>{readingMinutes(a.blocks, a.faq, a.dek)} min</Plate>
                   </div>
                   <h3 className="mt-3 font-display text-[1.1rem] leading-snug text-navy-900">
                     <Link to={`/blog/${a.slug}`} className="group-hover:text-burgundy-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-burgundy-600">{a.title}</Link>

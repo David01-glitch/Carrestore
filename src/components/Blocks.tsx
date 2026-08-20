@@ -129,4 +129,17 @@ export function countWords(blocks: Block[]): number {
   return n
 }
 
-export const readingMinutes = (blocks: Block[]): number => Math.max(1, Math.round(countWords(blocks) / 225))
+/**
+ * Reading time over everything the reader actually sees — body copy plus any FAQ and
+ * standfirst — at a conventional 200 words per minute.
+ */
+export const readingMinutes = (
+  blocks: Block[],
+  extra: { q: string; a: string }[] = [],
+  dek = '',
+): number => {
+  const extraWords =
+    extra.reduce((n, f) => n + `${f.q} ${f.a}`.trim().split(/\s+/).filter(Boolean).length, 0) +
+    dek.trim().split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round((countWords(blocks) + extraWords) / 200))
+}

@@ -70,7 +70,7 @@ export default function BlogPost() {
               <span aria-hidden="true" className="text-navy-300">·</span>
               <span>Updated <time dateTime={article.updated}>{fmt(article.updated)}</time></span>
               <span aria-hidden="true" className="text-navy-300">·</span>
-              <span>{readingMinutes(article.blocks)} min read</span>
+              <span>{readingMinutes(article.blocks, article.faq, article.dek)} min read</span>
             </div>
           </div>
         </Section>
